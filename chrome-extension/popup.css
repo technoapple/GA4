@@ -1,0 +1,247 @@
+/* ── Reset & base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  background: #f8f9fa;
+  color: #202124;
+  min-width: 600px;
+  max-width: 760px;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px 10px;
+  background: #1a73e8;
+  color: #fff;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* ── Search ────────────────────────────────────────────────────────────────── */
+.search-bar {
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-bar input:focus {
+  border-color: #1a73e8;
+}
+
+#result-count {
+  font-size: 12px;
+  color: #5f6368;
+  white-space: nowrap;
+}
+
+/* ── Tabs ──────────────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 2px solid #e8eaed;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 9px 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f6368;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab-btn:hover {
+  color: #1a73e8;
+  background: #f1f3f4;
+}
+
+.tab-btn.active {
+  color: #1a73e8;
+  border-bottom-color: #1a73e8;
+}
+
+/* ── Panels ────────────────────────────────────────────────────────────────── */
+.panel {
+  padding: 12px 16px;
+  max-height: 440px;
+  overflow-y: auto;
+}
+
+/* ── Events list ───────────────────────────────────────────────────────────── */
+.event-card {
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.event-header {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  transition: background 0.1s;
+}
+
+.event-header:hover {
+  background: #f1f3f4;
+}
+
+.event-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: #1a73e8;
+  white-space: nowrap;
+  min-width: 170px;
+}
+
+.event-desc {
+  flex: 1;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.chevron {
+  font-size: 14px;
+  color: #80868b;
+  transition: transform 0.2s;
+}
+
+.event-card.expanded .chevron {
+  transform: rotate(180deg);
+}
+
+.event-body {
+  border-top: 1px solid #e8eaed;
+  padding: 8px 12px;
+  background: #fafafa;
+}
+
+.no-params {
+  font-size: 12px;
+  color: #80868b;
+  font-style: italic;
+}
+
+/* ── Tables ────────────────────────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+thead tr {
+  background: #f1f3f4;
+}
+
+th {
+  text-align: left;
+  padding: 5px 8px;
+  font-weight: 600;
+  color: #5f6368;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+td {
+  padding: 5px 8px;
+  border-top: 1px solid #e8eaed;
+  vertical-align: top;
+}
+
+tr:hover td {
+  background: #f8f9fa;
+}
+
+.field-name {
+  font-weight: 600;
+  color: #1a73e8;
+  white-space: nowrap;
+}
+
+.field-type {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  color: #c2185b;
+  white-space: nowrap;
+}
+
+.field-desc {
+  color: #5f6368;
+}
+
+/* ── Badges ────────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-required {
+  background: #fce8e6;
+  color: #c5221f;
+}
+
+.badge-optional {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+/* ── Highlight (search) ─────────────────────────────────────────────────────── */
+mark {
+  background: #fbf1a9;
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* ── Empty state ───────────────────────────────────────────────────────────── */
+.empty {
+  text-align: center;
+  padding: 24px;
+  color: #80868b;
+  font-style: italic;
+}
