@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA4 Field Reference</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <svg class="logo" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <rect width="28" height="28" rx="6" fill="#fff" fill-opacity="0.15"/>
+      <text x="5" y="20" font-size="16" font-family="sans-serif" font-weight="700" fill="#fff">G4</text>
+    </svg>
+    <h1>GA4 Field Reference</h1>
+  </header>
+
+  <!-- ── Search ── -->
+  <div class="search-bar">
+    <input
+      id="search"
+      type="search"
+      placeholder="Search events, parameters, fields…"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <span id="result-count" aria-live="polite"></span>
+  </div>
+
+  <!-- ── Tabs ── -->
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" role="tab" data-tab="events" aria-selected="true">
+      Events
+    </button>
+    <button class="tab-btn" role="tab" data-tab="common" aria-selected="false">
+      Common Fields
+    </button>
+    <button class="tab-btn" role="tab" data-tab="item" aria-selected="false">
+      Item Fields
+    </button>
+  </nav>
+
+  <!-- ── Events panel ── -->
+  <section id="panel-events" class="panel" role="tabpanel" aria-label="Events">
+    <div id="events-list"></div>
+  </section>
+
+  <!-- ── Common fields panel ── -->
+  <section id="panel-common" class="panel" role="tabpanel" aria-label="Common Fields" hidden>
+    <div id="common-list"></div>
+  </section>
+
+  <!-- ── Item fields panel ── -->
+  <section id="panel-item" class="panel" role="tabpanel" aria-label="Item Fields" hidden>
+    <div id="item-list"></div>
+  </section>
+
+  <!-- ── Data & logic ── -->
+  <script src="data/ga4-fields.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
