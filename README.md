@@ -33,6 +33,14 @@ ga4.send('sign_up', {
 });
 ```
 
+## Framework Examples
+
+Use these integration guides for copy-paste setup patterns and lifecycle notes:
+
+- [React example](docs/examples/react.md)
+- [Vue example](docs/examples/vue.md)
+- [Vanilla JavaScript example](docs/examples/vanilla.md)
+
 ## API
 
 ### `ga4.init(option)`
